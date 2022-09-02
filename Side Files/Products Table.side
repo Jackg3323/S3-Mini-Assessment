@@ -1,0 +1,246 @@
+{
+  "id": "f9380462-14dc-411d-bee6-067e6b8015cd",
+  "version": "2.0",
+  "name": "Products Table",
+  "url": "https://s3t-products.netlify.app",
+  "tests": [{
+    "id": "df68ade5-f2c0-40f5-a1fd-fba3e7b15f40",
+    "name": "Fresh Page Checks",
+    "commands": [{
+      "id": "d5872d25-8422-4b41-881f-0cffe44e4863",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d9b928e0-8124-478c-9e89-d50c86f4ef93",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='root']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Products Table')]", "xpath:innerText"]
+      ],
+      "value": "Products Table"
+    }, {
+      "id": "da4f3511-db4a-4cce-b8ed-d8a4acb10b86",
+      "comment": "",
+      "command": "verifyEditable",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["css=#search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a3d19d7-aaff-40ab-9886-9a1f2272cbc7",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=tr:nth-child(1) > th",
+      "targets": [
+        ["css=tr:nth-child(1) > th", "css:finder"],
+        ["xpath=//div[@id='root']/main/table/tbody/tr/th", "xpath:idRelative"],
+        ["xpath=//th", "xpath:position"],
+        ["xpath=//th[contains(.,'Fruits')]", "xpath:innerText"]
+      ],
+      "value": "Fruits"
+    }, {
+      "id": "be21d6ee-4861-4c6b-8a97-c9e54fdd737a",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=tr:nth-child(5) > th",
+      "targets": [
+        ["css=tr:nth-child(5) > th", "css:finder"],
+        ["xpath=//div[@id='root']/main/table/tbody/tr[5]/th", "xpath:idRelative"],
+        ["xpath=//tr[5]/th", "xpath:position"],
+        ["xpath=//th[contains(.,'Vegetables')]", "xpath:innerText"]
+      ],
+      "value": "Vegetables"
+    }, {
+      "id": "74547cad-86dc-43b2-9fc6-d91228cfa219",
+      "comment": "",
+      "command": "verifyNotChecked",
+      "target": "id=in-stock",
+      "targets": [
+        ["id=in-stock", "id"],
+        ["css=#in-stock", "css:finder"],
+        ["xpath=//input[@id='in-stock']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a244ea4-f215-4cd5-af4b-78d3be52fbc0",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=label:nth-child(2)",
+      "targets": [
+        ["css=label:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/main/form/div[2]/label", "xpath:idRelative"],
+        ["xpath=//div[2]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'In Stock Only')]", "xpath:innerText"]
+      ],
+      "value": "In Stock Only"
+    }, {
+      "id": "a3ab85e5-0b99-4781-aab5-77bf38f184fb",
+      "comment": "",
+      "command": "close",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0a6cdf15-c962-4aca-9c20-ee3ae57c5d66",
+    "name": "Search Tests",
+    "commands": [{
+      "id": "0455a9e6-53f6-414e-a4d5-9482938b35f1",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8be46000-8d9a-45ea-885f-527e07c2b290",
+      "comment": "",
+      "command": "store",
+      "target": "apple",
+      "targets": [],
+      "value": "f"
+    }, {
+      "id": "15298c30-c900-4fe5-a4c2-08c9bb39f6af",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=tr:nth-child(8) > td:nth-child(1)",
+      "targets": [
+        ["css=tr:nth-child(8) > td:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/table/tbody/tr[8]/td", "xpath:idRelative"],
+        ["xpath=//tr[8]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Peas')]", "xpath:innerText"]
+      ],
+      "value": "v"
+    }, {
+      "id": "82f3e568-7ed0-4e03-8004-2f8fc14430d0",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["css=#search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${f}"
+    }, {
+      "id": "9ffc1c28-c760-43a3-8504-06bd1b21453c",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=td:nth-child(1)",
+      "targets": [],
+      "value": "${f}"
+    }, {
+      "id": "66157911-a953-4d3e-b571-bc3ddcb22523",
+      "comment": "",
+      "command": "type",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["css=#search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${v}"
+    }, {
+      "id": "2c1aff02-3dc5-479c-a216-1ed4fdcb08a0",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=tr:nth-child(6) > td:nth-child(1)",
+      "targets": [
+        ["css=tr:nth-child(6) > td:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/table/tbody/tr[6]/td", "xpath:idRelative"],
+        ["xpath=//tr[6]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Spinach')]", "xpath:innerText"]
+      ],
+      "value": "${v}"
+    }, {
+      "id": "90fc1215-29ef-4013-aba3-8b021c64bfae",
+      "comment": "",
+      "command": "close",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "ed5a353b-af34-4785-aa88-a088be68eab8",
+    "name": "In Stock Only Test",
+    "commands": [{
+      "id": "5d9ecfbb-1e77-4a37-8350-9c58d566ad17",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "01d6b3f1-953b-4fcf-9b63-3e134546387d",
+      "comment": "",
+      "command": "check",
+      "target": "id=in-stock",
+      "targets": [
+        ["id=in-stock", "id"],
+        ["css=#in-stock", "css:finder"],
+        ["xpath=//input[@id='in-stock']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3dbf10d4-61b4-424f-a89e-4009b650ac92",
+      "comment": "",
+      "command": "verifyElementNotPresent",
+      "target": "css=tr:nth-child(4) > .out-of-stock",
+      "targets": [
+        ["css=tr:nth-child(4) > .out-of-stock", "css:finder"],
+        ["xpath=//div[@id='root']/main/table/tbody/tr[4]/td", "xpath:idRelative"],
+        ["xpath=//tr[4]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Passionfruit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "02c8caf5-03b8-463a-8178-aeb4192b71e4",
+      "comment": "",
+      "command": "verifyElementNotPresent",
+      "target": "css=tr:nth-child(7) > .out-of-stock",
+      "targets": [
+        ["css=tr:nth-child(7) > .out-of-stock", "css:finder"],
+        ["xpath=//div[@id='root']/main/table/tbody/tr[7]/td", "xpath:idRelative"],
+        ["xpath=//tr[7]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Pumpkin')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9de699a0-f0c5-4bbc-80e0-e8aca4a3457d",
+      "comment": "",
+      "command": "close",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "b05a0bc3-e8f7-473f-bad7-6c469c2f1a20",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["df68ade5-f2c0-40f5-a1fd-fba3e7b15f40"]
+  }],
+  "urls": ["https://s3t-products.netlify.app/"],
+  "plugins": []
+}

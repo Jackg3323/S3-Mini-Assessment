@@ -1,0 +1,259 @@
+{
+  "id": "03900521-4c38-4d2c-b3c4-339f08a071d6",
+  "version": "2.0",
+  "name": "TODO",
+  "url": "https://s3t-todos.netlify.app/",
+  "tests": [{
+    "id": "06a9e640-8d47-460f-b69f-291ea5145688",
+    "name": "Fresh Page Checks",
+    "commands": [{
+      "id": "3ca9605d-2698-4722-9a2a-64257684c590",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0c587487-cce0-4891-a70c-c0aff276ab5e",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='root']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Todos')]", "xpath:innerText"]
+      ],
+      "value": "Todos"
+    }, {
+      "id": "1d66af78-fc6f-4785-884e-96ad1f6d31eb",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=add-button",
+      "targets": [
+        ["css=form", "css:finder"],
+        ["xpath=//div[@id='root']/main/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4322b982-99b4-4e03-b1e7-12710321cf24",
+      "comment": "",
+      "command": "verifyEditable",
+      "target": "id=todo-title",
+      "targets": [
+        ["id=todo-title", "id"],
+        ["css=#todo-title", "css:finder"],
+        ["xpath=//input[@id='todo-title']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "17a21cb1-9977-443e-a802-bacc069019df",
+      "comment": "",
+      "command": "close",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a22eb2bf-ee02-4984-8cf1-1a551b3f7731",
+    "name": "Manipulating TODOs",
+    "commands": [{
+      "id": "4a5ee496-a9c9-4a61-8f16-05e134e7573e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "17f48c31-bf54-468e-8981-3b416cbd2aa2",
+      "comment": "",
+      "command": "store",
+      "target": "Test the TODO",
+      "targets": [],
+      "value": "test"
+    }, {
+      "id": "bccd4a18-1d91-40ae-8ec8-1ce760290a67",
+      "comment": "",
+      "command": "store",
+      "target": "TODO EDIT",
+      "targets": [],
+      "value": "edit"
+    }, {
+      "id": "63114c59-0606-41a6-803d-e23c6609acc4",
+      "comment": "",
+      "command": "type",
+      "target": "id=todo-title",
+      "targets": [
+        ["id=todo-title", "id"],
+        ["css=#todo-title", "css:finder"],
+        ["xpath=//input[@id='todo-title']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${test}"
+    }, {
+      "id": "c8c1c810-af89-4fa7-9c94-c00d9aae3942",
+      "comment": "",
+      "command": "click",
+      "target": "id=add-button",
+      "targets": [
+        ["css=.todo:nth-child(11) > .btn--edit", "css:finder"],
+        ["xpath=(//button[@type='button'])[22]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/ol/li[11]/button[2]", "xpath:idRelative"],
+        ["xpath=//li[11]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fd75ce3-6d62-4323-a8aa-8e26f9272790",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.todo:nth-child(11) > span:nth-child(3)",
+      "targets": [
+        ["css=.todo:nth-child(11) > span:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/ol/li[11]/span[2]", "xpath:idRelative"],
+        ["xpath=//li[11]/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Test the TODO')]", "xpath:innerText"]
+      ],
+      "value": "${test}"
+    }, {
+      "id": "63d7827b-4fca-4717-a7fb-4858649b9b4f",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=todo-title",
+      "targets": [
+        ["id=todo-title", "id"],
+        ["css=#todo-title", "css:finder"],
+        ["xpath=//input[@id='todo-title']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4be8f055-0762-43be-9c47-b7e13f30f7f3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.todo:nth-child(11) > .btn--edit",
+      "targets": [
+        ["css=.todo:nth-child(11) > .btn--edit", "css:finder"],
+        ["xpath=(//button[@type='button'])[22]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/ol/li[11]/button[2]", "xpath:idRelative"],
+        ["xpath=//li[11]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f52e2f6a-c06d-4522-a838-c006e98f6a12",
+      "comment": "",
+      "command": "type",
+      "target": "id=todo-title",
+      "targets": [
+        ["id=todo-title", "id"],
+        ["css=#todo-title", "css:finder"],
+        ["xpath=//input[@id='todo-title']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${edit}"
+    }, {
+      "id": "315bb011-a71e-4da5-b0bc-eedb3da4a976",
+      "comment": "",
+      "command": "click",
+      "target": "id=add-button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d31aad60-21b4-4c10-80db-61167045ec46",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.todo:nth-child(11) > span:nth-child(3)",
+      "targets": [
+        ["css=.todo:nth-child(11) > span:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/ol/li[11]/span[2]", "xpath:idRelative"],
+        ["xpath=//li[11]/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Test the TODO')]", "xpath:innerText"]
+      ],
+      "value": "${edit}"
+    }, {
+      "id": "bdb53bb4-b3bf-4dd5-8c2b-5dd2dacfd376",
+      "comment": "",
+      "command": "check",
+      "target": "css=.todo:nth-child(11) #toggle",
+      "targets": [
+        ["css=.todo:nth-child(11) #toggle", "css:finder"],
+        ["xpath=(//input[@id='toggle'])[11]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/ol/li[11]/div/input", "xpath:idRelative"],
+        ["xpath=//li[11]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7405bd72-398a-4a4d-9f1d-3366668440ce",
+      "comment": "",
+      "command": "verifyChecked",
+      "target": "css=.todo:nth-child(11) #toggle",
+      "targets": [
+        ["css=.todo:nth-child(11) #toggle", "css:finder"],
+        ["xpath=(//input[@id='toggle'])[11]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/ol/li[11]/div/input", "xpath:idRelative"],
+        ["xpath=//li[11]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f846b0fc-3347-43d9-a9f4-2245506fd846",
+      "comment": "",
+      "command": "uncheck",
+      "target": "css=.todo:nth-child(11) #toggle",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "13a98698-ffef-44c1-b957-4c7465528fab",
+      "comment": "",
+      "command": "verifyNotChecked",
+      "target": "css=.todo:nth-child(11) #toggle",
+      "targets": [
+        ["css=.todo:nth-child(11) #toggle", "css:finder"],
+        ["xpath=(//input[@id='toggle'])[11]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/ol/li[11]/div/input", "xpath:idRelative"],
+        ["xpath=//li[11]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "034a03df-e8df-4766-99ec-3d23e4d21580",
+      "comment": "",
+      "command": "click",
+      "target": "css=.todo:nth-child(11) > .btn--delete",
+      "targets": [
+        ["css=.todo:nth-child(11) > .btn--delete", "css:finder"],
+        ["xpath=(//button[@type='button'])[21]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/ol/li[11]/button", "xpath:idRelative"],
+        ["xpath=//li[11]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9bc3ff9d-6720-4f2e-b460-3c84b456c014",
+      "comment": "",
+      "command": "verifyElementNotPresent",
+      "target": "css=.todo:nth-child(11) > span:nth-child(3)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca0c6450-9450-4b44-8f10-6bed1126161c",
+      "comment": "",
+      "command": "close",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "aad966a1-a547-402f-87f8-e68b49f35e66",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["06a9e640-8d47-460f-b69f-291ea5145688"]
+  }],
+  "urls": ["https://s3t-todos.netlify.app/"],
+  "plugins": []
+}

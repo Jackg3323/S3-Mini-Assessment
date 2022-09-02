@@ -1,0 +1,263 @@
+{
+  "id": "99d3d43c-3638-4493-bf5e-6babcc7241e1",
+  "version": "2.0",
+  "name": "Temp-Convert",
+  "url": "https://s3t-temperature-converter.netlify.app/",
+  "tests": [{
+    "id": "6717d390-3794-41d0-b295-83f2e8b63af9",
+    "name": "Fresh Page Check",
+    "commands": [{
+      "id": "c8af75ee-17f1-4174-b78e-0f01fbad18ae",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "630bcbd8-31f4-4662-8b34-49fd8c4b332f",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='root']/main/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Temperature Converter')]", "xpath:innerText"]
+      ],
+      "value": "Temperature Converter"
+    }, {
+      "id": "4c6d98c7-889e-48ea-ad2c-e10474105f54",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.flex:nth-child(1) > label",
+      "targets": [
+        ["css=.flex:nth-child(1) > label", "css:finder"],
+        ["xpath=//div[@id='root']/main/form/div/label", "xpath:idRelative"],
+        ["xpath=//label", "xpath:position"],
+        ["xpath=//label[contains(.,'°C')]", "xpath:innerText"]
+      ],
+      "value": "°C"
+    }, {
+      "id": "0b8901a8-9b01-4360-a488-33d77be12951",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.flex:nth-child(2) > label",
+      "targets": [
+        ["css=.flex:nth-child(2) > label", "css:finder"],
+        ["xpath=//div[@id='root']/main/form/div[2]/label", "xpath:idRelative"],
+        ["xpath=//div[2]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'°F')]", "xpath:innerText"]
+      ],
+      "value": "°F"
+    }, {
+      "id": "db99a327-02e5-4d48-bae0-64531866c3d4",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "id=°C",
+      "targets": [
+        ["id=°C", "id"],
+        ["css=#\\B0 C", "css:finder"],
+        ["xpath=//input[@id='°C']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "0"
+    }, {
+      "id": "7d6b8798-fe1d-460c-b370-498a52266fc1",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "id=°F",
+      "targets": [
+        ["id=°F", "id"],
+        ["css=#\\B0 F", "css:finder"],
+        ["xpath=//input[@id='°F']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "0"
+    }, {
+      "id": "8d6fccf9-f9f3-441a-8090-b233ab65a66b",
+      "comment": "",
+      "command": "verifyEditable",
+      "target": "id=°C",
+      "targets": [
+        ["id=°C", "id"],
+        ["css=#\\B0 C", "css:finder"],
+        ["xpath=//input[@id='°C']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "931cd4ac-4bc3-40c5-a2f1-dcdbb512764b",
+      "comment": "",
+      "command": "verifyEditable",
+      "target": "id=°F",
+      "targets": [
+        ["id=°C", "id"],
+        ["css=#\\B0 C", "css:finder"],
+        ["xpath=//input[@id='°C']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "38c59839-1d91-48ce-b5e8-979b400bea8c",
+      "comment": "",
+      "command": "close",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a93902df-59ff-4411-809e-ff7447ac42a4",
+    "name": "Convert from C - F",
+    "commands": [{
+      "id": "905799ee-f5ff-4540-8c54-e4207fd91d76",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c94c2197-7c82-4703-9ef6-1f9476cae587",
+      "comment": "",
+      "command": "type",
+      "target": "id=°C",
+      "targets": [
+        ["id=°C", "id"],
+        ["css=#\\B0 C", "css:finder"],
+        ["xpath=//input[@id='°C']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "100"
+    }, {
+      "id": "822d44d6-e47c-49a4-bd13-3e9b8904d7dd",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "id=°F",
+      "targets": [
+        ["id=°F", "id"],
+        ["css=#\\B0 F", "css:finder"],
+        ["xpath=//input[@id='°F']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "212"
+    }, {
+      "id": "177614c2-d95f-4334-88ae-bbf44ac8a1db",
+      "comment": "",
+      "command": "type",
+      "target": "id=°C",
+      "targets": [
+        ["id=°C", "id"],
+        ["css=#\\B0 C", "css:finder"],
+        ["xpath=//input[@id='°C']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "adsasd"
+    }, {
+      "id": "ebdddd1e-7e75-46db-9d1e-350c1bf51985",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "id=°F",
+      "targets": [
+        ["id=°F", "id"],
+        ["css=#\\B0 F", "css:finder"],
+        ["xpath=//input[@id='°F']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "32"
+    }, {
+      "id": "0e729e81-817a-4d09-9100-6bee96563c5d",
+      "comment": "",
+      "command": "close",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "ca3b00b5-178e-4c89-9208-bb32c2968af1",
+    "name": "Convert from F - C",
+    "commands": [{
+      "id": "fdbe5145-9e65-42a4-a63b-0671e431b60f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "efd29d41-702b-4d36-8f28-2ca5611faf8d",
+      "comment": "",
+      "command": "type",
+      "target": "id=°F",
+      "targets": [
+        ["id=°C", "id"],
+        ["css=#\\B0 C", "css:finder"],
+        ["xpath=//input[@id='°C']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "50"
+    }, {
+      "id": "cdcb7b5c-8e27-4175-a0f9-dd39cd2690fb",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "id=°C",
+      "targets": [
+        ["id=°F", "id"],
+        ["css=#\\B0 F", "css:finder"],
+        ["xpath=//input[@id='°F']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "10"
+    }, {
+      "id": "81ec4004-5fa5-4681-8f7b-158b4d142c1e",
+      "comment": "",
+      "command": "type",
+      "target": "id=°F",
+      "targets": [
+        ["id=°C", "id"],
+        ["css=#\\B0 C", "css:finder"],
+        ["xpath=//input[@id='°C']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "adsasd"
+    }, {
+      "id": "55da6caf-ec24-4d85-8877-d3f7ec2b05f6",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "id=°C",
+      "targets": [
+        ["id=°F", "id"],
+        ["css=#\\B0 F", "css:finder"],
+        ["xpath=//input[@id='°F']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "-17.778"
+    }, {
+      "id": "36d88f34-cd96-4498-a5b5-3664bea047f5",
+      "comment": "",
+      "command": "close",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "7a8c05f3-ea00-4b1d-99b5-767595f1b6ef",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6717d390-3794-41d0-b295-83f2e8b63af9"]
+  }],
+  "urls": ["https://s3t-temperature-converter.netlify.app/"],
+  "plugins": []
+}
